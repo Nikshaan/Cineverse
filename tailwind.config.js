@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      raleway: "Raleway",
+      lacquer: "Lacquer"
+    }
   },
   plugins: [],
 }

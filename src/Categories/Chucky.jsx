@@ -14,20 +14,20 @@ const Chucky = () => {
   useEffect(() => {fetchData()}, []);
 
   return (
-    <div className="p-2 flex flex-col gap-2">
-    <p className="text-3xl text-white">Chucky Movies</p>
-    <div id = "category" className="bg-black flex flex-col overflow-auto">
-      <div className="text-white flex w-full bg-black flex-nowra2 gap-1">
-        {
-          movies.length!=10
-          ? <p>Loading...</p>
-          : movies.map((movie) => (
-            <MovieCard key = {movie.imdbID} poster = {movie.Poster} title={movie.Title} type = {movie.Type} year = {movie.Year} />
-          )
-          )
-        }
-    </div>
-    </div>
+    <div className="p-2 flex flex-col gap-2 my-3">
+      <p className="text-2xl text-white font-raleway">Chucky Movies</p>
+      <div className="bg-black flex flex-col overflow-auto">
+        <div className="text-white flex w-full bg-black flex-nowra2 gap-1">
+          {
+            movies.length!=10
+            ? <p>Loading...</p>
+            : movies.map((movie) => (
+              <MovieCard key = {movie.imdbID} poster = {movie.Poster} title={movie.Title} year = {movie.Year} />
+            )
+            )
+          }
+        </div>
+      </div>
     </div>
   )
 }
