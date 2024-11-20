@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard";
-import Decoy from "../components/Decoy"
+import Decoy from "../components/Decoy";
 
 const Batman = () => {
 
@@ -19,14 +19,14 @@ const Batman = () => {
       <p className="text-2xl 2xl:text-4xl text-white font-raleway">Batman Movies</p>
       <div className="bg-black flex flex-col overflow-auto">
         <div className="text-white flex w-full bg-black flex-nowrap gap-2">
-            {
-              movies.length!=10
-              ? <Decoy />
-              : movies.map((movie) => (
-                <MovieCard key = {movie.imdbID} id = {movie.imdbID} poster = {movie.Poster} title={movie.Title} year = {movie.Year} />
-              )
-              )
-            }
+          {
+            movies.length!=10
+            ? <Decoy />
+            : movies.map((movie) => (
+              <MovieCard key = {movie.imdbID} id = {movie.imdbID} poster = {movie.Poster} title={movie.Title} year = {movie.Year} />
+            )
+            )
+          }
         </div>
       </div>
     </div>

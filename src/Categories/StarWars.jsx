@@ -9,7 +9,7 @@ const StarWars = () => {
       const url = 'https://www.omdbapi.com/?apikey=ea6fcc05&s=star wars&type=movie';
       let res = await fetch(url);
       let data = await res.json();
-      setMovies(data.Search)
+      setMovies(data.Search);
   }
   
   useEffect(() => {fetchData()}, []);
