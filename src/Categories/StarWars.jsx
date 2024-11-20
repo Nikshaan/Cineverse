@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard";
+import Decoy from "../components/Decoy";
 
 const StarWars = () => {
 
@@ -15,14 +16,14 @@ const StarWars = () => {
 
   return (
     <div className="p-2 flex flex-col gap-2 my-3">
-      <p className="text-2xl text-white font-raleway">Star Wars Movies</p>
+      <p className="text-2xl 2xl:text-4xl text-white font-raleway">Star Wars Movies</p>
       <div className="text-white flex flex-col overflow-auto">
         <div className="text-white flex w-full bg-black flex-nowrap gap-2">
           {
             movies.length!=10
-            ? <p>Loading...</p>
+            ? <Decoy />
             : movies.map((movie) => (
-              <MovieCard key = {movie.imdbID} poster = {movie.Poster} title={movie.Title} year = {movie.Year} />
+              <MovieCard key = {movie.imdbID} id = {movie.imdbID} poster = {movie.Poster} title={movie.Title} year = {movie.Year} />
             )
             )
           }
