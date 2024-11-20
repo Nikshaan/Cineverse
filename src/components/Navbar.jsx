@@ -12,9 +12,9 @@ const Navbar = () => {
 
   return (
     <div className="w-full bg-black h-16 lg:h-20 flex justify-between items-center px-4 py-2">
-        <div className="text-4xl lg:text-6xl flex justify-center items-center">
+        <div className="text-5xl lg:text-6xl flex justify-center items-center">
             <Link to = "/">
-                <h1 className="text-blue-400 cursor-pointer font-lacquer">Cine<span className="text-blue-700">verse</span>.</h1>
+                <h1 className="text-blue-400 cursor-pointer font-dancing">Cine<span className="text-blue-700">verse</span>.</h1>
             </Link>
         </div>
         <div className="flex justify-center items-center gap-2 lg:gap-4">

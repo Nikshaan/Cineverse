@@ -8,7 +8,7 @@ export default {
     extend: {},
     fontFamily: {
       raleway: "Raleway",
-      lacquer: "Lacquer"
+      dancing: "Dancing Spirit"
     }
   },
   plugins: [],
