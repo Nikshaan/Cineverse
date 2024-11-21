@@ -16,9 +16,9 @@ const Batman = () => {
 
   return (
     <div className="p-2 flex flex-col gap-2 my-3">
-      <p className="text-2xl 2xl:text-4xl text-white font-raleway">Batman Movies</p>
-      <div className="bg-black flex flex-col overflow-auto">
-        <div className="text-white flex w-full bg-black flex-nowrap gap-2">
+      <p className="text-2xl 2xl:text-4xl  text-black dark:text-white font-raleway">Batman Movies</p>
+      <div className="bg-white dark:bg-black flex flex-col overflow-auto">
+        <div className="text-black dark:text-white flex w-full bg-white dark:bg-black flex-nowrap gap-2">
           {
             movies.length!=10
             ? <Decoy />

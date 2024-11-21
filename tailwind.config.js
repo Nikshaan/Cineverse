@@ -8,9 +8,10 @@ export default {
     extend: {},
     fontFamily: {
       raleway: "Raleway",
-      dancing: "Dancing Spirit"
+      corinthia: "Corinthia"
     }
   },
   plugins: [],
+  darkMode: "class",
 }
 
