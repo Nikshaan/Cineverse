@@ -6,7 +6,7 @@ const MyList = () => {
 
   return (
     <div className="p-2">
-        <h1 className="text-xl 2xl:text-4xl text-black dark:text-white font-raleway">My List</h1>
+        <h1 className="text-xl 2xl:text-3xl text-black dark:text-white font-raleway">My List</h1>
         <div className="bg-black flex flex-col overflow-auto">
         <div className="text-black dark:text-white flex w-full bg-white dark:bg-black flex-nowrap gap-2">
             {

@@ -29,7 +29,7 @@ const Homepage = () => {
   return (
     <div className="h-full w-full bg-white dark:bg-black pb-10">
         <Navbar/>
-        <p className="text-black dark:text-white text-2xl 2xl:text-5xl pl-2 font-raleway -mb-3 mt-8 underline underline-offset-4">Suggested Movies</p>
+        <p className="text-black dark:text-white text-2xl 2xl:text-4xl pl-2 font-raleway -mb-3 mt-10 underline underline-offset-4">Suggested Movies</p>
         <Batman/>
         <HarryPotter/>
         <StarWars/>

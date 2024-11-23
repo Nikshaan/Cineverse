@@ -5,7 +5,7 @@ const ErrorPage = () => {
   return (
     <div className="w-full h-[100svh] bg-[#292929] flex flex-col justify-center items-center">
         <div className="flex justify-center items-center">
-            <img alt="loaderGif" src={gif} className="w-2/3 -mt-28 lg:w-5/6"/> 
+            <img alt="GIF" src={gif} className="w-2/3 -mt-28 lg:w-5/6"/> 
         </div>
         <div className="flex font-raleway text-white flex-col justify-center items-center gap-2">
             <h1 className="text-2xl lg:text-5xl">404: page does not exist</h1>
