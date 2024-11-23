@@ -4,6 +4,9 @@ import switch1 from "../assets/switch1.png";
 import switch2 from "../assets/switch2.png";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
+
 let mode = true;
 
 const Navbar = () => {
@@ -29,16 +32,16 @@ const Navbar = () => {
             </Link>
         </div>
         <div className="flex justify-center items-center gap-2 lg:gap-4">
-            <Link to = "/Cineverse/watchList">
-                <img src = {watchList} alt="watchList" className="w-9 h-9 lg:w-12 lg:h-12 cursor-pointer"/>
-            </Link>
-
             <Link to = "/Cineverse/search">
-                <img src = {search} alt="search" className="w-9 h-9 lg:w-12 lg:h-12 cursor-pointer"/>
+                <img data-tooltip-id="my-tooltip" data-tooltip-content="Search" src = {search} alt="search" className="w-9 h-9 lg:w-12 lg:h-12 cursor-pointer"/>
+            </Link>
+            <Link to = "/Cineverse/watchList">
+                <img data-tooltip-id="my-tooltip" data-tooltip-content="WatchList" src = {watchList} alt="watchList" className="w-9 h-9 lg:w-12 lg:h-12 cursor-pointer"/>
             </Link>
             <img src = {darkMode ? switch1 : switch2} onClick={() => setDarkMode(!darkMode)}
              alt="switch" className="w-9 h-9 lg:w-12 lg:h-12 cursor-pointer border-2 border-blue-400 rounded-full bg-white"/>
         </div>
+        <Tooltip id="my-tooltip" />
     </div>
   )
 }

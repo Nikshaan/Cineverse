@@ -20,6 +20,14 @@ const MovieCard = ({id, poster, title, year}) => {
 
   useEffect(() => checkButton(), []);
 
+  useEffect(() => {
+    if(openModal){
+      let page = document.getElementById("main").style.overflow = "hidden";
+    }else{
+      let page = document.getElementById("main").style.overflow = "auto";
+    }
+  }, [openModal]);
+
   const addToList = () => {
     dispatch(addMovie({id, poster, title, year}));
   }
