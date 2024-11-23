@@ -3,20 +3,22 @@ import Navbar from "../components/Navbar";
 import MovieCard from "../components/MovieCard";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useSelector } from "react-redux";
-let listLen = 0;
+import { useDispatch, useSelector } from "react-redux";
+import { updateLenList } from "../Redux/listSlice";
 
 const SearchPage = () => {
   const [movies, setMovies] = useState([]);
   const list = useSelector(state => state.list);
+  const lenList = useSelector(state => state.lenList);
+  const dispatch = useDispatch();
 
   const notify = (list) => {
-      if(list.length > listLen){
+      if(list.length > lenList){
         toast.success("Movie added to WatchList!");
-        listLen = list.length;
-      }else if(list.length < listLen){
+        dispatch(updateLenList(1));
+      }else if(list.length < lenList){
         toast.error("Movie removed from WatchList!");
-        listLen = list.length;
+        dispatch(updateLenList(-1));
       };
   };
 

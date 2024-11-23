@@ -4,6 +4,7 @@ const listSlice = createSlice({
   name: "watchList",
   initialState: {
     list: [],
+    lenList: 0
   },
   reducers: {
     addMovie: (state, action) => {
@@ -11,10 +12,13 @@ const listSlice = createSlice({
     },
     removeMovie: (state, action) => {
         state.list = state.list.filter((movie) => movie.id !== action.payload);
+    },
+    updateLenList: (state, action) => {
+      state.lenList += action.payload;
     }
   }
 })
 
-export const { addMovie, removeMovie } = listSlice.actions;
+export const { addMovie, removeMovie, updateLenList } = listSlice.actions;
 
 export default listSlice.reducer;

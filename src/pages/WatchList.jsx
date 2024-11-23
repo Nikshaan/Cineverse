@@ -1,22 +1,24 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../components/Navbar";
 import MovieCard from "../components/MovieCard";
 import pepe from "../assets/pepe.gif";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect } from "react";
-let listLen = 0;
+import { updateLenList } from "../Redux/listSlice";
 
 const WatchList = () => {
   const list = useSelector(state => state.list);
+  const lenList = useSelector(state => state.lenList);
+  const dispatch = useDispatch();
 
   const notify = (list) => {
-    if(list.length > listLen){
-      listLen = list.length;
-    }else if(list.length < listLen){
-      toast.error("Movie removed from WatchList!");
-      listLen = list.length;
-    };
+      if(list.length > lenList){
+        dispatch(updateLenList(1));
+      }else if(list.length < lenList){
+        toast.error("Movie removed from WatchList!");
+        dispatch(updateLenList(-1));
+      };
   };
 
   useEffect(() => (notify(list)), [list]);
