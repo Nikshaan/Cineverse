@@ -1,9 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import MovieCard from "../components/MovieCard";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useSelector } from "react-redux";
+let listLen = 0;
 
 const SearchPage = () => {
   const [movies, setMovies] = useState([]);
+  const list = useSelector(state => state.list);
+
+  const notify = (list) => {
+      if(list.length > listLen){
+        toast.success("Movie added to WatchList!");
+        listLen = list.length;
+      }else if(list.length < listLen){
+        toast.error("Movie removed from WatchList!");
+        listLen = list.length;
+      };
+  };
+
+  useEffect(() => (notify(list)), [list]);
 
   const searchMovie = async(title) => {
       const url = `https://www.omdbapi.com/?apikey=ea6fcc05&s=${title}`;
@@ -34,6 +51,18 @@ const SearchPage = () => {
         ))
         }
       </div>
+      <ToastContainer
+      position="top-right"
+      autoClose={1700}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="colored"
+      />
     </div>
     </>
   )

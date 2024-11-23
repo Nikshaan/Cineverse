@@ -2,14 +2,29 @@ import { useSelector } from "react-redux";
 import Navbar from "../components/Navbar";
 import MovieCard from "../components/MovieCard";
 import pepe from "../assets/pepe.gif";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useEffect } from "react";
+let listLen = 0;
 
 const WatchList = () => {
-  const list = useSelector(state => state.list)
+  const list = useSelector(state => state.list);
+
+  const notify = (list) => {
+    if(list.length > listLen){
+      listLen = list.length;
+    }else if(list.length < listLen){
+      toast.error("Movie removed from WatchList!");
+      listLen = list.length;
+    };
+  };
+
+  useEffect(() => (notify(list)), [list]);
   
   return (
     <>
     <Navbar/>
-    <div className="w-full bg-white text-black dark:bg-black dark:text-white pb-10">
+    <div className="w-full flex flex-col justify-center items-center bg-white text-black dark:bg-black dark:text-white pb-10">
       <div className="w-full flex justify-center items-center">
         <h1 className="text-black dark:text-white flex p-4 font-raleway md:-mr-10 text-2xl md:text-3xl lg:text-4xl mb-6 underline underline-offset-2">Username Watch List</h1>
       </div>
@@ -30,6 +45,18 @@ const WatchList = () => {
             </div>
           }
         </div>
+        <ToastContainer
+        position="top-right"
+        autoClose={1700}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        />
         </>
   )
 }
