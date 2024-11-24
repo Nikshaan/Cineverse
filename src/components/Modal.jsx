@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import StarRatings from "react-star-ratings";
 import loader from "../assets/loading.gif";
 import defaultMovie from "../assets/default.jpg";
+import cancel from "../assets/cancel.png";
 
 
 const Modal = ({closeModal, MovieId}) => {
@@ -18,10 +19,10 @@ const Modal = ({closeModal, MovieId}) => {
         }, []);
 
     return (
-        <div className="w-screen h-[100svh] bg-white bg-opacity-75 dark:bg-black dark:bg-opacity-75 fixed top-0 bottom-0 right-0 left-0 flex justify-center items-center">
+        <div className="w-screen h-screen bg-white bg-opacity-75 dark:bg-black dark:bg-opacity-75 fixed top-0 bottom-0 right-0 left-0 flex justify-center items-center">
             <div className="w-[90%] h-[90%] relative rounded-xl text-white dark:text-black dark:bg-blue-400 bg-blue-800 overflow-auto bg-opacity-100 flex flex-col items-center justify-center">
-            <div className="absolute top-1 left-2 text-2xl lg:text-4xl">
-                <button onClick={() => closeModal(false)}>X</button>
+            <div className="absolute top-2 left-2 text-2xl lg:text-4xl">
+                <img src={cancel} alt="cancel" className="w-8 lg:w-10 2xl:w-12 cursor-pointer bg-white rounded-full dark:bg-transparent" onClick={() => closeModal(false)} />
             </div>
             {
             movie.Title == "none" 
