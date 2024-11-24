@@ -19,10 +19,10 @@ const Modal = ({closeModal, MovieId}) => {
         }, []);
 
     return (
-        <div className="w-screen h-screen bg-white bg-opacity-75 dark:bg-black dark:bg-opacity-75 fixed top-0 bottom-0 right-0 left-0 flex justify-center items-center">
+        <div className="w-full h-full bg-white bg-opacity-75 dark:bg-black dark:bg-opacity-75 fixed top-0 bottom-0 right-0 left-0 flex justify-center items-center">
             <div className="w-[90%] h-[90%] relative rounded-xl text-white dark:text-black dark:bg-blue-400 bg-blue-800 overflow-auto bg-opacity-100 flex flex-col items-center justify-center">
             <div className="absolute top-2 left-2 text-2xl lg:text-4xl">
-                <img src={cancel} alt="cancel" className="w-8 lg:w-10 2xl:w-12 cursor-pointer bg-white rounded-full dark:bg-transparent" onClick={() => closeModal(false)} />
+                <img src={cancel} alt="cancel" className="w-7 lg:w-10 2xl:w-12 cursor-pointer bg-white rounded-full dark:bg-transparent" onClick={() => closeModal(false)} />
             </div>
             {
             movie.Title == "none" 
@@ -30,7 +30,7 @@ const Modal = ({closeModal, MovieId}) => {
                 <p>Loading</p>
                 <img alt="loader" src={loader} className="w-16 lg:w-20"/>
               </div>
-            : <div className="flex flex-col mt-8 2xl:mt-10 p-2 justify-start h-full items-center">
+            : <div className="flex flex-col mt-10 p-2 justify-start h-full items-center">
                 <div className="w-full flex flex-col gap-4 lg:gap-10 text-center p-2 items-center justify-center">
                     <h1 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-raleway font-semibold underline underline-offset-4">{movie.Title} &nbsp;({movie.Year})</h1>
                     <img alt="poster" src={imgSrc} onError = {() => setImgSrc(defaultMovie)} className="w-40 md:w-48 lg:w-56 2xl:w-72 border-2 border-white dark:border-black"/>
