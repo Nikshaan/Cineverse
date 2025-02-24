@@ -42,7 +42,7 @@ const SearchPage = () => {
     <div className="flex bg-white dark:bg-black flex-col justify-center items-center pb-10">
       <div className="flex flex-col w-full mt-4 gap-3 justify-center items-center font-raleway">
         <h1 className="text-black dark:text-white text-3xl">Search for a Movie</h1>
-        <input onChange={(e) => searchMovie(e.target.value)} className="w-2/3 px-4 py-1.5 rounded-full border-none bg-black text-white dark:bg-white dark:text-black" type="text" placeholder="Enter Movie's title here" />
+        <input onChange={(e) => searchMovie(e.target.value)} className="w-2/3 xl:w-1/2 px-4 py-1.5 rounded-full border-none bg-black text-white dark:bg-white dark:text-black" type="text" placeholder="Enter Movie's title here" />
       </div>
       <div className="text-black dark:text-white mt-8 h-full p-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 2xl:grid-cols-5 place-items-center w-full bg-white dark:bg-black gap-1 md:gap-2 gap-y-4 2xl:gap-y-8">
         {

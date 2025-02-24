@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import StarRatings from "react-star-ratings";
-import loader from "../assets/loading.gif";
 import defaultMovie from "../assets/default.jpg";
 import cancel from "../assets/cancel.png";
+import { PulseLoader } from "react-spinners";
 
 
 const Modal = ({closeModal, MovieId}) => {
@@ -21,14 +21,14 @@ const Modal = ({closeModal, MovieId}) => {
     return (
         <div className="w-full h-full bg-white bg-opacity-75 dark:bg-black dark:bg-opacity-75 fixed top-0 bottom-0 right-0 left-0 flex justify-center items-center">
             <div className="w-[90%] h-[90%] relative rounded-xl text-white dark:text-black dark:bg-blue-400 bg-blue-800 overflow-auto bg-opacity-100 flex flex-col items-center justify-center">
-            <div className="absolute top-2 left-2 text-2xl lg:text-4xl">
+            <div className="absolute top-2 right-2 text-2xl lg:text-4xl">
                 <img src={cancel} alt="cancel" className="w-7 lg:w-10 2xl:w-12 cursor-pointer bg-white rounded-full dark:bg-transparent" onClick={() => closeModal(false)} />
             </div>
             {
             movie.Title == "none" 
             ? <div className="flex justify-center items-center text-3xl lg:text-4xl font-raleway">
-                <p>Loading</p>
-                <img alt="loader" src={loader} className="w-16 lg:w-20"/>
+                <p className="px-2">Loading</p>
+                <PulseLoader size={6}/>
               </div>
             : <div className="flex flex-col mt-10 p-2 justify-start h-full items-center">
                 <div className="w-full flex flex-col gap-4 lg:gap-10 text-center p-2 items-center justify-center">
